@@ -1,0 +1,20 @@
+<body>
+  <div class="container">
+    <h1>Checkout BulletProof Meteor</h1>
+    <h4>Comments</h4>
+    <div id="comments">
+      {{> comments}}
+    </div>
+  </div>
+</body>
+
+<template name="comments">
+  <ul>
+  {{#each getComments}}
+    <li>{{text}}</li>
+    {{#if haveChildren}}
+      {{> comments}}
+    {{/if}}
+  {{/each}}
+  </ul>
+</template>
